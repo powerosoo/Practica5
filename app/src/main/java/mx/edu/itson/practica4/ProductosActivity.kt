@@ -18,8 +18,8 @@ class ProductosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productos)
-
-        agregarProductos()
+        var menuOption: String? = intent.getStringExtra("menuType")
+        agregarProductos(menuOption)
 
         var listView: ListView = findViewById(R.id.listview) as ListView
 
@@ -27,13 +27,65 @@ class ProductosActivity : AppCompatActivity() {
         listView.adapter=adaptador
     }
 
-    fun agregarProductos(){
-        menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
-        menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
-        menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
-        menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
-        menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
-        menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+    fun agregarProductos(option:String?)
+    {
+        when(option)
+        {
+            "Antojitos"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+            "Especialidades"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+            "Combinaciones"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+            "Tortas"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+            "Sopas"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+            "Drinks"->
+            {
+                menu.add(Product(name = "Quesadillas", R.drawable.quesadillas, description = "Rellenas con su carne favorita, servidas con ensalada. Filled with your choice of meat, served with salad.", price = 5.69))
+                menu.add(Product(name = "Huaraches", R.drawable.huaraches, description = "Tortilla gruesa con frijoles, tu carne favorita, lechuga, queso fresco y crema. Big Thick tortilla with beans, your choice of meat, fresh cheese, and sour cream", price = 10.85))
+                menu.add(Product(name = "Gringas", R.drawable.gringas, description = "Tortilla de harina con queso, carne al pastor y piña Flour tortilla with cheese marinated pork and pineapple", price = 7.99))
+                menu.add(Product(name = "Sincronizadas", R.drawable.sincronizadas, description = "Tortilla de harina rellena con queso y jamon. Se sirve con lechuga, crema y guacamole Sandwich of Two four tortillas filled with ham and cheese. Served with lettuce, sour cream, and guacamole.", price = 7.69))
+                menu.add(Product(name = "Sopes", R.drawable.sopes, description = "Tortilla gruesa cubierta de frijoles, tu carne favorita, lechuga, queso fresco y crema Fried thick tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.56))
+                menu.add(Product(name = "Tostadas", R.drawable.tostadas, description = "Tortilla frita con frijoles, tu carne favorita, lechuga, queso fresco, crema y jitomate Fried tortilla with beans, your choice of meat, lettuce, fresh cheese, sour cream and tomatoes", price = 3.73))
+            }
+        }
     }
 
     private class AdaptadorProductos: BaseAdapter {

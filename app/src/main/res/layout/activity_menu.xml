@@ -42,7 +42,7 @@
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
             android:paddingVertical="@dimen/menu_buttons_paddings"
-            android:id="@+id/button_cold_drinks"
+            android:id="@+id/button_antojitos"
             />
 
         <Button
@@ -55,7 +55,7 @@
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
             android:paddingVertical="@dimen/menu_buttons_paddings"
-            android:id="@+id/button_hot_drinks"
+            android:id="@+id/button_especialidades"
             />
 
         <Button
@@ -67,10 +67,11 @@
             android:paddingHorizontal="@dimen/menu_buttons_paddings"
             android:text="@string/combinations"
             android:textColor="@color/white"
-            android:textSize="@dimen/menu_buttons_text" />
+            android:textSize="@dimen/menu_buttons_text"
+            android:id="@+id/button_combinaciones"/>
 
         <Button
-            android:text="@string/antojitos"
+            android:text="Tortas"
             android:textColor="@color/white"
             android:background="@drawable/first_gradient"
             android:paddingHorizontal="@dimen/menu_buttons_paddings"
@@ -79,11 +80,11 @@
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
             android:paddingVertical="@dimen/menu_buttons_paddings"
+            android:id="@+id/button_tortas"/>
 
-            />
 
         <Button
-            android:text="@string/especialidades"
+            android:text="Sopas"
             android:textColor="@color/white"
             android:background="@drawable/first_gradient"
             android:paddingHorizontal="@dimen/menu_buttons_paddings"
@@ -92,8 +93,7 @@
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
             android:paddingVertical="@dimen/menu_buttons_paddings"
-
-            />
+            android:id="@+id/button_sopas"/>
 
         <Button
             android:layout_height="62dp"
@@ -102,9 +102,10 @@
             android:layout_marginRight="@dimen/menu_buttons_margin"
             android:background="@drawable/first_gradient"
             android:paddingHorizontal="@dimen/menu_buttons_paddings"
-            android:text="@string/combinations"
+            android:text="Drinks"
             android:textColor="@color/white"
-            android:textSize="@dimen/menu_buttons_text" />
+            android:textSize="@dimen/menu_buttons_text"
+            android:id="@+id/button_drinks"/>
 
 
 </GridLayout>
