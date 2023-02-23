@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practica4">
         <activity
-            android:name=".productos"
+            android:name=".ProductosActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
